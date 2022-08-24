@@ -372,31 +372,3 @@ exports.searchUsers = catchAsync(async (req, res, next) => {
         });
     }
 });
-
-// User Search -- Atlas Search
-// exports.searchUsers = catchAsync(async (req, res, next) => {
-
-//     if (req.query.keyword) {
-//         const users = await User.aggregate(
-//             [
-//                 {
-//                     $search: {
-//                         index: 'usersearch',
-//                         text: {
-//                             query: req.query.keyword,
-//                             path: ['name', 'username'],
-//                             fuzzy: {
-//                                 maxEdits: 2.0
-//                             }
-//                         }
-//                     }
-//                 }
-//             ]
-//         )
-
-//         res.status(200).json({
-//             success: true,
-//             users,
-//         });
-//     }
-// });
